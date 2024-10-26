@@ -1,52 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Contact form</title>
 
-  Contact Us
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="contact">
+      <div class="contact__form">
+        <form action="submit" method="post" class="contact__form-inner">
+          <header class="contact__header">
+            <h1 class="contact__title"></h1>
+          </header>
 
-  First Name
-  This field is required
+          <div class="contact__grid">
+            <div class="contact__field">
+              <label for="firstName" class="contact__field-label"
+                >First Name</label
+              >
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                class="contact__field-input"
+                required
+                autocomplete="given-name"
+              />
+              <p class="contact__field-warning">This field is required</p>
+            </div>
 
-  Last Name
-  This field is required
+            <div class="contact__field">
+              <label for="lastName" class="contact__field-label"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                class="contact__field-input"
+                required
+                autocomplete="family-name"
+              />
+              <p class="contact__field-warning">This field is required</p>
+            </div>
+          </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+          <!-- Contact Information -->
+          <div class="contact__field">
+            <label for="emailAddress" class="contact__field-label"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              name="emailAddress"
+              id="emailAddress"
+              class="contact__field-input"
+              required
+              autocomplete="email"
+            />
+            <p class="contact__field-error">
+              Please enter a valid email address
+            </p>
+            <p class="contact__field-warning">This field is required</p>
+          </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+          <!-- Query Selection -->
+          <div class="contact__radio-group">
+            <div class="contact__radio-item">
+              <input
+                type="radio"
+                name="queryType"
+                id="enquiry"
+                value="general"
+                class="contact__radio-input"
+                required
+              />
+              <label for="enquiry" class="contact__radio-label"
+                >General Enquiry</label
+              >
+            </div>
+            <div class="contact__radio-item">
+              <input
+                type="radio"
+                name="queryType"
+                id="support"
+                value="support"
+                class="contact__radio-input"
+                required
+              />
+              <label for="support" class="contact__radio-label"
+                >Support Request</label
+              >
+            </div>
+            <p class="contact__field-warning">Please select a query type</p>
+          </div>
 
-  Message
-  This field is required
+          <!-- Message Field -->
+          <div class="contact__field">
+            <label for="message" class="contact__field-label"
+              >Your Message</label
+            >
+            <textarea
+              name="message"
+              id="message"
+              class="contact__field-input contact__field-input--multiline"
+              rows="5"
+              required
+            ></textarea>
+            <p class="contact__field-warning">This field is required</p>
+          </div>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+          <!-- Consent Checkbox -->
+          <div class="contact__checkbox">
+            <input
+              type="checkbox"
+              name="consent"
+              id="consent"
+              class="contact__checkbox-input"
+              required
+            />
+            <label for="consent" class="contact__checkbox-label">
+              I consent to being contacted by the team
+            </label>
+            <p class="contact__field-warning">
+              To submit this form, please consent to being contacted
+            </p>
+          </div>
 
-  Submit
+          <!-- Submit Button -->
+          <div class="contact__actions">
+            <button
+              type="submit"
+              class="contact__button contact__button--primary"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <article class="contact__success">
+        <h1 class="contact__success-title">Message Sent!</h1>
+        <p class="contact__success-text">
+          Thanks for completing the form. We'll be in touch soon!
+        </p>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </body>
 </html>
