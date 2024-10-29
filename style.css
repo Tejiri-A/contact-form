@@ -261,10 +261,10 @@ input[type="radio"]:checked
 
 .contact__success {
   /* display: none; */
-  width: 450px;
+  width: min(90vw, 450px);
   background: var(--color-grey-900);
   color: var(--color-white);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 15px;
   position: absolute;
   top: -100%;
@@ -274,7 +274,7 @@ input[type="radio"]:checked
 }
 
 .contact__success-title {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-milli);
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -284,6 +284,7 @@ input[type="radio"]:checked
 
 .contact__success-message {
   color: var(--color-grey-500);
+  font-size: var(--font-size-milli);
 }
 
 .contact__checkbox {
@@ -366,6 +367,14 @@ input[type="checkbox"]:checked::after {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+  }
+
+  .contact__success{
+    padding: 1.5rem;
+  }
+
+  .contact__success-title, .contact__success-message{
+    font-size: var(--font-size-base);
   }
 }
 /* footer */
