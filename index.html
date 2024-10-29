@@ -50,7 +50,6 @@
                 name="firstName"
                 id="firstName"
                 class="contact__field-input"
-                required
                 autocomplete="given-name"
               />
               <p class="contact__field-warning">This field is required</p>
@@ -65,7 +64,6 @@
                 name="lastName"
                 id="lastName"
                 class="contact__field-input"
-                required
                 autocomplete="family-name"
               />
               <p class="contact__field-warning">This field is required</p>
@@ -73,22 +71,21 @@
           </div>
 
           <!-- Contact Information -->
-          <div class="contact__field">
+          <div class="contact__field contact__field-email">
             <label for="emailAddress" class="contact__field-label"
               >Email Address</label
             >
             <input
-              type="email"
+              type="text"
               name="emailAddress"
               id="emailAddress"
-              class="contact__field-input"
-              required
+              class="contact__field-email"
               autocomplete="email"
             />
-            <p class="contact__field-error">
-              Please enter a valid email address
-            </p>
             <p class="contact__field-warning">This field is required</p>
+            <!-- <p class="contact__field-error">
+              Please enter a valid email address
+            </p> -->
           </div>
 
           <!-- Query Selection -->
@@ -103,7 +100,6 @@
                   id="enquiry"
                   value="general"
                   class="contact__radio-input"
-                  required
                 />
                 <label for="enquiry" class="contact__radio-label">
                   <span class="contact__radio-checked"
@@ -119,7 +115,6 @@
                   id="support"
                   value="support"
                   class="contact__radio-input"
-                  required
                 />
                 <label for="support" class="contact__radio-label">
                   <span class="contact__radio-checked"
@@ -129,8 +124,8 @@
                 >
               </div>
             </div>
+            <p class="contact__field-warning">Please select a query type</p>
           </div>
-          <p class="contact__field-warning">Please select a query type</p>
 
           <!-- Message Field -->
           <div class="contact__field">
@@ -142,7 +137,6 @@
               id="message"
               class="contact__field-input contact__field-input--multiline"
               rows="5"
-              required
             ></textarea>
             <p class="contact__field-warning">This field is required</p>
           </div>
@@ -154,15 +148,14 @@
               name="consent"
               id="consent"
               class="contact__checkbox-input"
-              required
             />
             <label for="consent" class="contact__checkbox-label">
               I consent to being contacted by the team
             </label>
-            <p class="contact__field-warning">
-              To submit this form, please consent to being contacted
-            </p>
           </div>
+          <p class="contact__field-warning">
+            To submit this form, please consent to being contacted
+          </p>
 
           <!-- Submit Button -->
           <div class="contact__actions">
@@ -187,7 +180,12 @@
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="https://www.frontendmentor.io/profile/Tejiri-A">Oghenetejiri Samuel Amrasa</a>.
+      Coded by
+      <a href="https://www.frontendmentor.io/profile/Tejiri-A"
+        >Oghenetejiri Samuel Amrasa</a
+      >.
     </footer>
+
+    <script src="./app.js"></script>
   </body>
 </html>

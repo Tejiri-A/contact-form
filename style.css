@@ -134,6 +134,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2rem;
   background: var(--color-green-200);
 }
 
@@ -143,6 +144,7 @@ body {
   background: var(--color-white);
   padding: 1.25rem;
   border-radius: 15px;
+  justify-self: center;
 }
 
 .contact__title {
@@ -203,6 +205,7 @@ textarea:focus {
 .contact__radio-grid {
   display: grid;
   gap: var(--font-size-nano);
+  margin-bottom: var(--font-size-nano);
 }
 
 .contact__radio-input {
@@ -257,13 +260,12 @@ input[type="radio"]:checked
 }
 
 /* validation classes */
-.contact__field-warning {
+.contact__field-warning, .contact__field-error {
   display: none;
+  font-size: var(--font-size-milli);
+  color: var(--color-red);
 }
 
-.contact__field-error {
-  display: none;
-}
 
 .contact__success {
   display: none;
@@ -339,9 +341,6 @@ input[type="checkbox"]:checked::after {
 .attribution {
   font-size: 11px;
   text-align: center;
-  position: absolute;
-  bottom: 2px;
-  align-self: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);

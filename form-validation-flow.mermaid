@@ -1,0 +1,25 @@
+flowchart TD
+    A[User Interacts with Form] --> B{Input Method}
+    B -->|Mouse| C[Fill Form Fields]
+    B -->|Keyboard| D[Navigate with Tab/Enter]
+    
+    D --> E[Focus Management]
+    E --> C
+    
+    C --> F{Validation on Blur/Input}
+    F -->|Invalid| G[Show Field Error]
+    G -->|Aria Live Region| H[Screen Reader Announces Error]
+    G --> C
+    
+    F -->|Valid| I[Clear Field Error]
+    I -->|Aria Live Region| J[Screen Reader Announces Clear]
+    I --> K[Continue Filling Form]
+    
+    K --> L{Form Submit}
+    L -->|Invalid Fields Exist| M[Show All Errors]
+    M -->|Aria Live Region| N[Screen Reader Announces Errors]
+    M --> C
+    
+    L -->|All Valid| O[Submit Form]
+    O --> P[Show Success Toast]
+    P -->|Aria Live Region| Q[Screen Reader Announces Success]
