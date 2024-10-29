@@ -260,7 +260,30 @@ input[type="radio"]:checked
 }
 
 .contact__success {
-  display: none;
+  /* display: none; */
+  width: 450px;
+  background: var(--color-grey-900);
+  color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 15px;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 1s ease-out;
+}
+
+.contact__success-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--font-size-nano);
+  margin-bottom: var(--font-size-nano);
+}
+
+.contact__success-message {
+  color: var(--color-grey-500);
 }
 
 .contact__checkbox {
@@ -330,14 +353,16 @@ input[type="checkbox"]:checked::after {
 }
 
 /* validation classes */
-.contact__field-warning, .contact__field-error {
+.contact__field-warning,
+.contact__field-error {
   display: none;
   font-size: var(--font-size-milli);
   color: var(--color-red);
 }
 
-@media screen and (min-width : 768px) {
-  .contact__grid, .contact__radio-grid{
+@media screen and (min-width: 768px) {
+  .contact__grid,
+  .contact__radio-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;

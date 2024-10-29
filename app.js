@@ -8,6 +8,7 @@ const root = document.querySelector(":root");
 const rootStyles = getComputedStyle(root);
 const red = rootStyles.getPropertyValue("--color-red");
 const green600 = rootStyles.getPropertyValue("--color-green-600");
+const successMessageBox = document.querySelector(".contact__success");
 
 // function textFieldValidation(){
 //     inputTexts.forEach((inputText) => {
@@ -148,7 +149,7 @@ form.addEventListener("submit", (e) => {
 
   if (allValid) {
     // All validations passed, submit the form or perform other actions
-    alert("Successful submission!");
+    successMessageBox.style.top = '0.15rem';
   } else {
     // At least one validation failed, display an error message or prevent further actions
     alert("Please fix the highlighted errors before submitting.");
