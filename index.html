@@ -1,52 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- google fonts import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
 
-  Contact Us
+    <!-- google icon import -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&icon_names=check_circle"
+    />
 
-  First Name
-  This field is required
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  Last Name
-  This field is required
+    <link rel="stylesheet" href="style.css" />
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <main class="contact">
+      <div class="contact__form">
+        <header class="contact__header">
+          <h1 class="contact__title">Contact Us</h1>
+        </header>
+        <form action="submit" method="post" class="contact__form-inner">
+          <div class="contact__grid">
+            <div class="contact__field">
+              <label for="firstName" class="contact__field-label"
+                >First Name</label
+              >
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                class="contact__field-input"
+                autocomplete="given-name"
+              />
+              <p class="contact__field-warning">This field is required</p>
+            </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+            <div class="contact__field">
+              <label for="lastName" class="contact__field-label"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                class="contact__field-input"
+                autocomplete="family-name"
+              />
+              <p class="contact__field-warning">This field is required</p>
+            </div>
+          </div>
 
-  Message
-  This field is required
+          <!-- Contact Information -->
+          <div class="contact__field contact__field-email">
+            <label for="emailAddress" class="contact__field-label"
+              >Email Address</label
+            >
+            <input
+              type="text"
+              name="emailAddress"
+              id="emailAddress"
+              class="contact__field-email"
+              autocomplete="email"
+            />
+            <p class="contact__field-warning">This field is required</p>
+            <!-- <p class="contact__field-error">
+              Please enter a valid email address
+            </p> -->
+          </div>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+          <!-- Query Selection -->
 
-  Submit
+          <div class="contact__radio-group">
+            <p class="contact__field-label">Query Type</p>
+            <div class="contact__radio-grid">
+              <div class="contact__radio-item">
+                <input
+                  type="radio"
+                  name="queryType"
+                  id="enquiry"
+                  value="general"
+                  class="contact__radio-input"
+                />
+                <label for="enquiry" class="contact__radio-label">
+                  <span class="contact__radio-checked"
+                    ><div class="contact__radio-checked-inner"></div
+                  ></span>
+                  General Enquiry</label
+                >
+              </div>
+              <div class="contact__radio-item">
+                <input
+                  type="radio"
+                  name="queryType"
+                  id="support"
+                  value="support"
+                  class="contact__radio-input"
+                />
+                <label for="support" class="contact__radio-label">
+                  <span class="contact__radio-checked"
+                    ><div class="contact__radio-checked-inner"></div
+                  ></span>
+                  Support Request</label
+                >
+              </div>
+            </div>
+            <p class="contact__field-warning">Please select a query type</p>
+          </div>
 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+          <!-- Message Field -->
+          <div class="contact__field">
+            <label for="message" class="contact__field-label"
+              >Your Message</label
+            >
+            <textarea
+              name="message"
+              id="message"
+              class="contact__field-input contact__field-input--multiline"
+              rows="5"
+            ></textarea>
+            <p class="contact__field-warning">This field is required</p>
+          </div>
+
+          <!-- Consent Checkbox -->
+          <div class="contact__checkbox">
+            <input
+              type="checkbox"
+              name="consent"
+              id="consent"
+              class="contact__checkbox-input"
+            />
+            <label for="consent" class="contact__checkbox-label">
+              I consent to being contacted by the team
+            </label>
+          </div>
+          <p class="contact__field-warning">
+            To submit this form, please consent to being contacted
+          </p>
+
+          <!-- Submit Button -->
+          <div class="contact__actions">
+            <button
+              type="submit"
+              class="contact__button contact__button--primary"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <div class="contact__success">
+      <p class="contact__success-title">
+        <span class="material-symbols-outlined"> check_circle </span> Message
+        Sent!
+      </p>
+      <p class="contact__success-message">
+        Thanks for completing the form. We'll be in touch soon!
+      </p>
+    </div>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by
+      <a href="https://www.frontendmentor.io/profile/Tejiri-A"
+        >Oghenetejiri Samuel Amrasa</a
+      >.
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
 </html>

@@ -1,0 +1,378 @@
+/* varaibles */
+:root {
+  /* Colors - Primary */
+  --color-green-200: hsl(148, 38%, 91%);
+  --color-green-600: hsl(169, 82%, 27%);
+  --color-red: hsl(0, 66%, 54%);
+
+  /* Colors - Neutral */
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey-500: hsl(186, 15%, 59%);
+  --color-grey-900: hsl(187, 24%, 22%);
+
+  /* Typography - Font Family */
+  --font-family-primary: "Karla", sans-serif;
+
+  /* Typography - Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Typography - Base Size */
+  --font-size-base: 16px;
+
+  /* Typography - Larger than Heading Sizes */
+  --font-size-giga: 5rem; /* 80px / 16px = 5rem */
+  --font-size-mega: 4.375rem; /* 70px / 16px = 4.375rem */
+  --font-size-kilo: 3.75rem; /* 60px / 16px = 3.75rem */
+
+  /* Typography - Heading Sizes */
+  --font-size-h1: 2.25rem; /* 36px / 16px = 2.25rem */
+  --font-size-h2: 2rem; /* 32px / 16px = 2rem */
+  --font-size-h3: 1.75rem; /* 28px / 16px = 1.75rem */
+  --font-size-h4: 1.5rem; /* 24px / 16px = 1.5rem */
+  --font-size-h5: 1.25rem; /* 20px / 16px = 1.25rem */
+  --font-size-h6: 1.125rem; /* 18px / 16px = 1.125rem */
+
+  /* Typography - Smaller than Heading Sizes */
+  --font-size-milli: 0.875rem; /* 14px / 16px = 0.875rem */
+  --font-size-micro: 0.625rem; /* 10px / 16px = 0.625rem */
+  --font-size-nano: 0.5rem; /* 8px / 16px = 0.5rem */
+}
+
+/* Optional: Apply base font size to HTML element */
+html {
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-primary);
+}
+
+/* css reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Make sure text area cannot be resized */
+textarea {
+  resize: none;
+}
+
+/* main */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  background: var(--color-green-200);
+}
+
+.contact {
+  width: min(90vw, 738px);
+  margin: 0 auto;
+  background: var(--color-white);
+  padding: 1.25rem;
+  border-radius: 15px;
+  justify-self: center;
+}
+
+.contact__title {
+  color: var(--color-grey-900);
+  margin-bottom: 1rem;
+}
+
+.contact__form-inner,
+.contact__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact__field {
+  display: grid;
+  gap: var(--font-size-nano);
+}
+
+.contact__field-label {
+  font-size: var(--font-size-milli);
+  color: var(--color-green-600);
+  font-weight: 700;
+}
+
+.contact__field-label::after {
+  content: "*";
+  color: inherit;
+  margin-left: var(--font-size-nano);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-green-600);
+  color: var(--color-green-600);
+  font-weight: 700;
+}
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  cursor: pointer;
+  border: 1px solid var(--color-grey-900);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none !important;
+  border: 1px solid var(--color-grey-900);
+}
+
+.contact__radio-group .contact__field-label {
+  margin-bottom: var(--font-size-milli);
+}
+
+.contact__radio-grid {
+  display: grid;
+  gap: var(--font-size-nano);
+  margin-bottom: var(--font-size-nano);
+}
+
+.contact__radio-input {
+  display: none;
+}
+
+.contact__radio-label {
+  display: flex;
+  align-items: center;
+  gap: var(--font-size-milli);
+  color: var(--color-green-600);
+  border: 1px solid var(--color-green-600);
+  border-radius: 5px;
+  padding: var(--font-size-milli) var(--font-size-h5);
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+}
+.contact__radio-checked {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-green-200);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.contact__radio-checked-inner {
+  background: var(--color-green-600);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+input[type="radio"]:hover {
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + .contact__radio-label {
+  background: var(--color-green-200);
+}
+
+input[type="radio"]:checked + .contact__radio-label .contact__radio-checked {
+  border-color: var(--color-green-600);
+}
+
+input[type="radio"]:checked
+  + .contact__radio-label
+  .contact__radio-checked
+  .contact__radio-checked-inner {
+  display: block;
+}
+
+.contact__success {
+  /* display: none; */
+  width: 450px;
+  background: var(--color-grey-900);
+  color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 15px;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 1s ease-out;
+}
+
+.contact__success-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--font-size-nano);
+  margin-bottom: var(--font-size-nano);
+}
+
+.contact__success-message {
+  color: var(--color-grey-500);
+}
+
+.contact__checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--font-size-milli);
+}
+
+.contact__checkbox-label {
+  color: var(--color-green-600);
+  font-size: var(--font-size-base);
+  padding-right: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contact__checkbox-label::after {
+  content: "*";
+  color: inherit;
+  margin-left: var(--font-size-nano);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  --webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  aspect-ratio: 1/1;
+  border: 1px solid var(--color-green-600);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+input[type="checkbox"]::after {
+  content: "\f00c";
+  font-family: FontAwesome;
+  font-weight: 900;
+  font-size: var(--font-size-micro);
+  color: white;
+  display: none;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--color-green-600);
+}
+
+input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+.contact__button {
+  width: 100%;
+  padding: 0.625rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--color-green-600);
+  color: var(--color-white);
+  font-size: var(--font-size-milli);
+}
+
+.contact__button--primary:hover {
+  cursor: pointer;
+  background: var(--color-grey-900);
+}
+
+/* validation classes */
+.contact__field-warning,
+.contact__field-error {
+  display: none;
+  font-size: var(--font-size-milli);
+  color: var(--color-red);
+}
+
+@media screen and (min-width: 768px) {
+  .contact__grid,
+  .contact__radio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+/* footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
