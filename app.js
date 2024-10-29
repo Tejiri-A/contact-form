@@ -150,6 +150,7 @@ form.addEventListener("submit", (e) => {
   if (allValid) {
     // All validations passed, submit the form or perform other actions
     successMessageBox.style.top = '0.15rem';
+    form.reset()
   } else {
     // At least one validation failed, display an error message or prevent further actions
     alert("Please fix the highlighted errors before submitting.");
