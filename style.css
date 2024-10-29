@@ -219,7 +219,7 @@ textarea:focus {
   color: var(--color-green-600);
   border: 1px solid var(--color-green-600);
   border-radius: 5px;
-  padding: var(--font-size-nano) var(--font-size-h5);
+  padding: var(--font-size-milli) var(--font-size-h5);
   width: 100%;
   font-weight: 700;
   cursor: pointer;
@@ -258,14 +258,6 @@ input[type="radio"]:checked
   .contact__radio-checked-inner {
   display: block;
 }
-
-/* validation classes */
-.contact__field-warning, .contact__field-error {
-  display: none;
-  font-size: var(--font-size-milli);
-  color: var(--color-red);
-}
-
 
 .contact__success {
   display: none;
@@ -337,6 +329,20 @@ input[type="checkbox"]:checked::after {
   background: var(--color-grey-900);
 }
 
+/* validation classes */
+.contact__field-warning, .contact__field-error {
+  display: none;
+  font-size: var(--font-size-milli);
+  color: var(--color-red);
+}
+
+@media screen and (min-width : 768px) {
+  .contact__grid, .contact__radio-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
 /* footer */
 .attribution {
   font-size: 11px;
